@@ -21,3 +21,8 @@ png("plot2.png")
 plot(subset_data2,type="b",pch=19,col="red",xlab="Year",ylab="Total Emissions (in tons)",
      main="Total Emissions per year in Baltimore City, Maryland: 1999-2008",lwd=2)
 dev.off()
+#other way to do it that looks better
+
+#plot
+barplot(subset_data2$x,names.arg = subset_data2$Group.1)
+#didnt put labels cuz im lazy
