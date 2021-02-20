@@ -20,3 +20,9 @@ png("plot1.png",height = 480,width = 480)
 plot(subset_data,type="b",pch=19,col="green",xlab="Year",ylab="Total Emissions (in tons)",
      main="Total Emissions in the USA per year: 1999-2008",lwd=3)
 dev.off()
+
+## other way to do it that looks better
+
+##plotting
+barplot(subset_data$x,names.arg = subset_data$Group.1)
+#didnt put labels cuz im lazy
