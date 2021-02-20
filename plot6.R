@@ -38,3 +38,14 @@ plot(subset_data62$Year,subset_data62$Emissions,pch=19,type="b",col="purple",xla
 mtext("Motor vehicle related emissions in 1999-2008",outer=TRUE,side = 3,line=-1.5, cex=2)
 
 dev.off()
+#other way to do it that looks better
+
+subset_data63 <- mutate(subset_data61,County = "Baltimore")
+subset_data64 <- mutate(subset_data62,County = "Los Angeles")
+
+join <- rbind(subset_data63,subset_data64)
+
+ggpp <- ggplot(join,aes(factor(Year),Emissions,fill=County)) + geom_bar(aes(fill=Year),stat="identity") +  
+    theme_bw() + guides(fill=FALSE) + facet_grid(.~County,scales="free",space="free") 
+ggpp
+#didnt put labels cuz im lazy
