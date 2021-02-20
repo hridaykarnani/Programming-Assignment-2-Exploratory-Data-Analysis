@@ -24,3 +24,6 @@ png("plot5.png")
 plot(subset_data5,type="b",pch=19,col="purple",xlab="Year",ylab="Total Emissions (in tons)",
      main="Total Motor Vehicle related emissions in the USA: 1999-2008",lwd=2)
 dev.off()
+# other way to do it that looks better
+barplot(subset_data5$x,names.arg=subset_data5$Group.1,col="purple")
+#didnt put labels cuz im lazy
