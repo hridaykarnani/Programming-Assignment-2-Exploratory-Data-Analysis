@@ -22,3 +22,6 @@ png("plot4.png")
 plot(subset_data4,type="b",pch=19,col="blue",xlab="Year",ylab="Total Emissions (in tons)",
      main="Total Coal related emissions in the USA: 1999-2008",lwd=2)
 dev.off()
+#other way to do it that looks better
+barplot(subset_data4$x,names.arg=subset_data4$Group.1,col="purple")
+#didnt put labels cuz im lazy
