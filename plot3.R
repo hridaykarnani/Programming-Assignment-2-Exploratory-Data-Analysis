@@ -27,3 +27,8 @@ with(subset_data3,qplot(Year,TotalEmissions,colour= type))+geom_line() +
     labs(title="Total Emissions in Baltimore City, Maryland, according to each type: 1999-2008",
          x="Year",y="Total Emissions (in tons)")
 dev.off()
+#plot
+ggp <- ggplot(subset_data3,aes(factor(Year),TotalEmissions,fill=type)) + geom_bar(aes(fill=Year),stat="identity") +  
+                theme_bw() + guides(fill=FALSE) + facet_grid(.~type,scales="free",space="free") 
+ggp
+#didnt put labels cuz im lazy
